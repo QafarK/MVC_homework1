@@ -1,0 +1,30 @@
+﻿@{
+	Layout = null;
+
+}
+@model IEnumerable<MVC_homework1.Entities.Drink>
+<!DOCTYPE html/>
+
+<html>
+	<head></head>
+	
+	<body>
+		<div style="display: flex; flex-direction:column; justify-content: center; align-items: center; height: 100vh; margin: 0px; ">
+				<ul style="list-style-type: none; padding: 0px; margin: 0px">
+		@foreach (var item in Model)
+		{
+					<li style="width:fit-content; gap: 10px; margin:20px; display: flex; flex:1">
+
+						<span style="background-color:cornflowerblue; border: groove; min-width:70px; padding: 5px; display: flex; justify-content: center; align-items:center; overflow-wrap: break-word;">
+							Id: @item.Id
+						</span>
+
+						<span style="background-color: aquamarine; border: groove; width:200px; padding: 5px; display: inline-block; text-align:left; overflow-wrap: break-word;">
+							Drink name: @item.Name
+						</span>
+					</li>
+		}
+				</ul>
+		</div>
+	</body>
+</html>
