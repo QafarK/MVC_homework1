@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MVC_homework1.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -37,7 +38,7 @@ namespace MVC_homework1.Controllers
 
 		public ViewResult QueryParam(string key, int id = -1)
 		{
-			IEnumerable<FastFood> fastFoods;
+			IEnumerable<FastFood> fastFoods = Enumerable.Empty<FastFood>();
 
 			if (id == -1)
 				fastFoods = _fastFoods.Where(e => e.Name.ToLower().Contains(key));
@@ -49,7 +50,7 @@ namespace MVC_homework1.Controllers
 
 		public JsonResult QueryParamJson(string key, int id = -1) 
 		{
-			IEnumerable<FastFood> fastFoods;
+			IEnumerable<FastFood> fastFoods = Enumerable.Empty<FastFood>();
 
 			if (id == -1)
 				fastFoods = _fastFoods.Where(e => e.Name.ToLower().Contains(key));
