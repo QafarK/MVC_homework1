@@ -50,7 +50,7 @@ namespace MVC_homework1
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Drink}/{action=Index}/{id?}");
+                    pattern: "{controller=home}/{action=Index}/{id?}");
             });
         }
     }

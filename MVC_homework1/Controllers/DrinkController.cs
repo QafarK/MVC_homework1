@@ -40,18 +40,20 @@ namespace MVC_homework1.Controllers
 		// return View(_drinks);
 		//}
 
-		public ViewResult RootParam(int id = -1)
+
+		#region RouteParam
+		public ViewResult RouteParam(int id = -1)
 		{
 			if (id == -1)
 				return View("Drinks", _drinks);
 			else
 			{
 				var drink = _drinks.FirstOrDefault(dr => dr.Id == id);
-				return View("RootParam", drink);
+				return View("RouteParam", drink);
 			}
 		}
 
-		public JsonResult RootParamJson(int id = -1)
+		public JsonResult RouteParamJson(int id = -1)
 		{
 			if (id == -1)
 				return Json(_drinks);
@@ -61,5 +63,7 @@ namespace MVC_homework1.Controllers
 				return Json(drink);
 			}
 		}
+		#endregion
+
 	}
 }
