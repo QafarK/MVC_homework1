@@ -10,7 +10,6 @@ namespace MVC_homework1.Controllers
 			return "home controller";
 		}
 
-		//route param
 		public IActionResult Drinks()
 		{
 			return Redirect("/drink/drinks");
